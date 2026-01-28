@@ -62,9 +62,9 @@ const NetworkTopology: React.FC = () => {
           initial={{ pathLength: 0, opacity: 0 }}
           animate={{ 
             pathLength: 1, 
-            opacity: activeNode === 'mail' ? [0.4, 1, 0.4] : 0.4,
+            opacity: activeNode === 'mail' ? [0.4, 1, 0.4] : (hoveredNode === 'mail' ? 1 : 0.4),
             strokeDasharray: activeNode === 'mail' ? "8 8" : "4 4",
-            strokeWidth: activeNode === 'mail' ? [2, 4, 2] : 2
+            strokeWidth: activeNode === 'mail' ? [2, 4, 2] : (hoveredNode === 'mail' ? 3 : 2)
           }}
           transition={{ duration: activeNode === 'mail' ? 1 : 1.5, ease: "easeInOut" }}
           x1="50%" y1="50%" x2="20%" y2="25%" 
@@ -75,9 +75,9 @@ const NetworkTopology: React.FC = () => {
           initial={{ pathLength: 0, opacity: 0 }}
           animate={{ 
             pathLength: 1, 
-            opacity: activeNode === 'ads' ? [0.4, 1, 0.4] : 0.4,
+            opacity: activeNode === 'ads' ? [0.4, 1, 0.4] : (hoveredNode === 'ads' ? 1 : 0.4),
             strokeDasharray: activeNode === 'ads' ? "8 8" : "4 4",
-            strokeWidth: activeNode === 'ads' ? [2, 4, 2] : 2
+            strokeWidth: activeNode === 'ads' ? [2, 4, 2] : (hoveredNode === 'ads' ? 3 : 2)
           }}
           transition={{ duration: activeNode === 'ads' ? 1 : 1.5, delay: activeNode ? 0 : 0.2, ease: "easeInOut" }}
           x1="50%" y1="50%" x2="80%" y2="25%" 
@@ -88,9 +88,9 @@ const NetworkTopology: React.FC = () => {
           initial={{ pathLength: 0, opacity: 0 }}
           animate={{ 
             pathLength: 1, 
-            opacity: activeNode === 'search' ? [0.4, 1, 0.4] : 0.4,
+            opacity: activeNode === 'search' ? [0.4, 1, 0.4] : (hoveredNode === 'search' ? 1 : 0.4),
             strokeDasharray: activeNode === 'search' ? "8 8" : "4 4",
-            strokeWidth: activeNode === 'search' ? [2, 4, 2] : 2
+            strokeWidth: activeNode === 'search' ? [2, 4, 2] : (hoveredNode === 'search' ? 3 : 2)
           }}
           transition={{ duration: activeNode === 'search' ? 1 : 1.5, delay: activeNode ? 0 : 0.4, ease: "easeInOut" }}
           x1="50%" y1="50%" x2="50%" y2="80%" 
